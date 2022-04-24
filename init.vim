@@ -39,6 +39,10 @@ call plug#end()
 
 nmap <esc> :noh <CR>
 
+
+" save when press ctrl+s
+nmap <C-s> :w <CR>
+
 " plugin configuration
 
 " NERDCommenter
