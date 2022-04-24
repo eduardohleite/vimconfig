@@ -24,9 +24,12 @@ sh -c 'curl -fLo $HOME/nvim/autoload/plug.vim --create-dirs \
 
 # install plugin dependencies
 $BREW install ctags
+$BREW tap homebrew/cask-fonts
+$BREW install --cask font-jetbrains-mono-nerd-font
 
 # copy init.vim
 cp init.vim $HOME/.config/nvim
 
 echo "Now run nvim and execute :PlugInstall"
 echo "Execute CocInstall coc-pyright to install Python intellisense"
+echo "Set jetbrains mono nerd as the terminal font for full devicon support"
