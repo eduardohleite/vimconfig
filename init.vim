@@ -34,23 +34,30 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
-nmap <esc> :noh <CR>
+" key bindings
 
+" remove search results highlights when press esc
+nmap <esc> :noh <CR>
 
 " save when press ctrl+s
 nmap <C-s> :w <CR>
 
+" python
+let g:python3_host_prog = expand('$HOME/.config/nvim/env/bin/python3') 
+
 " plugin configuration
 
 " NERDCommenter
-nmap <C-c> <Plug>NERDCommenterToggle
-vmap <C-c> <Plug>NERDCommenterToggle<CR>gv
+nmap <C-k> <Plug>NERDCommenterToggle
+vmap <C-k> <Plug>NERDCommenterToggle<CR>gv
 
 " NERDTree
 let g:NERDTreeMinimalUI=1
+let NERDTreeShowHidden=1
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F5> :NERDTreeRefreshRoot<CR>
 
@@ -60,6 +67,14 @@ let g:tagbar_ctags_bin='/opt/homebrew/bin/ctags'
 
 " auto-pairs
 au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
+
+" vimspector
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+nmap <f12> :VimspectorReset<CR>
+
+" coc
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
 
 " Tabs
 let g:airline#extensions#tabline#enabled=1
